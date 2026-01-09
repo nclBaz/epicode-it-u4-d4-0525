@@ -1,6 +1,8 @@
 package entities;
 
-public class Cat extends Animal {
+import interfaces.Jumper;
+
+public class Cat extends Animal implements Jumper {
 	// Lista attributi ESCLUSIVA DEI CAT
 	private boolean hasBoots;
 
@@ -15,13 +17,14 @@ public class Cat extends Animal {
 		System.out.println("Per essere più precisi sono un GATTO");
 	}
 
+	@Override
+	public void makeSound() {
+		System.out.println("MEOW!");
+	}
+
 	public void sayYourName(String saluto) { // OVERLOAD del metodo precedente
 		this.sayYourName();
 		System.out.println(saluto);
-	}
-
-	public void meow() {
-		System.out.println("MEOW!");
 	}
 
 	public boolean isHasBoots() {
@@ -39,5 +42,10 @@ public class Cat extends Animal {
 				", age=" + this.getAge() +
 				", hasBoots=" + hasBoots +
 				"} ";
+	}
+
+	@Override
+	public void jump(int cm) {
+		System.out.println("Ciao sono un gatto e salto " + cm + " cm");
 	}
 }

@@ -1,6 +1,6 @@
 package entities;
 
-public class Animal {
+public abstract class Animal {
 	// La classe Animal sarà la nostra SUPERCLASSE
 	// Qua aggiungeremo tutte le caratteristiche comuni a tutti gli animali
 	// I figli erediteranno queste caratteristiche e poi potranno definirne di ulteriori specifiche del tipo di animale
@@ -23,6 +23,8 @@ public class Animal {
 	public void sayYourName() {
 		System.out.println("Ciao sono un animale e mi chiamo " + this.name + ", la mia età è: " + this.age);
 	}
+
+	public abstract void makeSound();
 
 	@Override
 	public String toString() {

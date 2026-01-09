@@ -1,6 +1,8 @@
 package entities;
 
-public class Dog extends Animal {
+import interfaces.Runner;
+
+public class Dog extends Animal implements Runner {
 	// Lista attributi ESCLUSIVA DEI DOG
 	private boolean isACop;
 
@@ -20,9 +22,11 @@ public class Dog extends Animal {
 		System.out.println("Ciao sono un CANE e mi chiamo " + this.getName() + ", la mia età è: " + this.getAge());
 	}
 
-	public void bark() {
+	@Override
+	public void makeSound() {
 		System.out.println("BARK!");
 	}
+
 
 	public boolean isACop() {
 		return isACop;
@@ -39,5 +43,10 @@ public class Dog extends Animal {
 				", age=" + this.getAge() +
 				", isACop=" + isACop +
 				"} ";
+	}
+
+	@Override
+	public void run(double km) {
+		System.out.println("Ciao sono un cane e corro " + km + " km");
 	}
 }
